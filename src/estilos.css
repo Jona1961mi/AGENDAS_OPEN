@@ -1,0 +1,269 @@
+/* ============================================
+   ESTILOS FULLCALENDAR
+   ============================================ */
+
+/* Contenedor principal */
+.fc {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Toolbar del calendario */
+.fc .fc-toolbar {
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 0;
+}
+
+.fc .fc-toolbar-title {
+  font-size: 1.75em;
+  font-weight: 700;
+  color: #667eea;
+}
+
+/* Botones */
+.fc .fc-button-primary {
+  background-color: #667eea;
+  border-color: #667eea;
+  color: white;
+  text-transform: capitalize;
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+
+.fc .fc-button-primary:hover {
+  background-color: #5568d3;
+  border-color: #5568d3;
+  transform: translateY(-1px);
+}
+
+.fc .fc-button-primary:disabled {
+  background-color: #b0b9e0;
+  border-color: #b0b9e0;
+  opacity: 0.6;
+}
+
+.fc .fc-button-primary:not(:disabled):active,
+.fc .fc-button-primary:not(:disabled).fc-button-active {
+  background-color: #4a5bc4;
+  border-color: #4a5bc4;
+}
+
+.fc .fc-button-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+/* Encabezado del calendario */
+.fc .fc-col-header-cell {
+  background: #f8f9fa;
+  padding: 12px 8px;
+  font-weight: 600;
+  color: #495057;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  letter-spacing: 0.5px;
+}
+
+/* Borde de celdas */
+.fc-theme-standard td,
+.fc-theme-standard th {
+  border: 1px solid #e9ecef;
+}
+
+.fc-scrollgrid {
+  border: 1px solid #dee2e6;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+}
+
+/* Días del calendario */
+.fc .fc-daygrid-day {
+  background: white;
+}
+
+.fc .fc-daygrid-day-number {
+  padding: 8px;
+  font-size: 0.95em;
+  font-weight: 500;
+  color: #495057;
+}
+
+.fc .fc-daygrid-day-top {
+  justify-content: center;
+}
+
+/* Día actual */
+.fc .fc-day-today {
+  background-color: #fff3cd !important;
+}
+
+.fc .fc-day-today .fc-daygrid-day-number {
+  background: #667eea;
+  color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4px auto;
+}
+
+/* Días de otros meses */
+.fc .fc-day-other {
+  background: #fafafa;
+  opacity: 0.5;
+}
+
+/* Frame de los días */
+.fc-daygrid-day-frame {
+  min-height: 120px;
+  padding: 4px;
+}
+
+/* Eventos */
+.fc-event {
+  border: none;
+  border-radius: 4px;
+  padding: 4px 6px;
+  margin: 2px 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.fc-event:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.fc-daygrid-event {
+  margin-top: 3px;
+  white-space: normal;
+}
+
+.fc-event-main {
+  color: white;
+}
+
+.fc-event-title {
+  font-weight: 500;
+  font-size: 0.9em;
+}
+
+/* Colores de eventos */
+.fc-event {
+  background-color: #667eea;
+  border-left: 3px solid #4a5bc4;
+}
+
+.fc-event:nth-child(2n) {
+  background-color: #764ba2;
+  border-left: 3px solid #5a3a7a;
+}
+
+.fc-event:nth-child(3n) {
+  background-color: #f093fb;
+  border-left: 3px solid #d574e8;
+}
+
+/* Link de más eventos */
+.fc .fc-daygrid-more-link {
+  color: #667eea;
+  font-weight: 600;
+  font-size: 0.85em;
+  margin: 4px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  transition: all 0.2s;
+}
+
+.fc .fc-daygrid-more-link:hover {
+  background: #667eea;
+  color: white;
+}
+
+/* Vista de hora */
+.fc .fc-timegrid-slot {
+  height: 3em;
+}
+
+.fc .fc-timegrid-slot-label {
+  border-right: 1px solid #e9ecef;
+  font-size: 0.85em;
+  color: #6c757d;
+}
+
+.fc .fc-timegrid-event {
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Vista harness */
+.fc-view-harness {
+  background: white;
+}
+
+/* Popover */
+.fc .fc-popover {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid #dee2e6;
+}
+
+.fc .fc-popover-header {
+  background: #667eea;
+  color: white;
+  padding: 12px;
+  border-radius: 8px 8px 0 0;
+  font-weight: 600;
+}
+
+/* Hover en días */
+.fc-daygrid-day:hover {
+  background-color: #f8f9fa;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* Scrollbar personalizada */
+.fc-scroller::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.fc-scroller::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.fc-scroller::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 4px;
+}
+
+.fc-scroller::-webkit-scrollbar-thumb:hover {
+  background: #5568d3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .fc .fc-toolbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .fc .fc-toolbar-title {
+    font-size: 1.3em;
+  }
+  
+  .fc-daygrid-day-frame {
+    min-height: 80px;
+  }
+  
+  .fc .fc-button {
+    padding: 0.3em 0.5em;
+    font-size: 0.9em;
+  }
+}

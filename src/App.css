@@ -1,0 +1,517 @@
+.app {
+  min-height: 100vh;
+  padding: 20px;
+  animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.app-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 25px 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: slideDown 0.6s ease-out;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.app-header h1 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 2rem;
+  text-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+  animation: titlePulse 3s ease-in-out infinite;
+}
+
+@keyframes titlePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+/* Google Auth Container */
+.google-auth-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.google-user-info {
+  padding: 8px 15px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.google-email {
+  font-weight: 600;
+}
+
+.auth-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.auth-button:hover::before {
+  left: 100%;
+}
+
+.auth-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.app-main {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: scaleUp 0.6s ease-out;
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Sección de citas */
+.appointments-section {
+  margin-bottom: 35px;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.appointments-section h2 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+  color: #999;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.empty-state p:first-child {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.empty-state p:last-child {
+  font-size: 1.1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+/* Lista de citas */
+.appointments-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.appointment-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-left: 5px solid transparent;
+  border-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%) 1;
+  position: relative;
+  overflow: hidden;
+  animation: cardSlideIn 0.6s ease-out;
+}
+
+@keyframes cardSlideIn {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.appointment-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+  transform: scale(0);
+  transition: transform 0.6s;
+}
+
+.appointment-card:hover::before {
+  transform: scale(1);
+}
+
+.appointment-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(102, 126, 234, 0.25);
+}
+
+.appointment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.appointment-header h3 {
+  color: #333;
+  font-size: 1.2rem;
+  margin: 0;
+  flex: 1;
+  font-weight: 700;
+}
+
+.delete-btn {
+  background: linear-gradient(135deg, rgba(255, 59, 48, 0.1) 0%, rgba(255, 59, 48, 0.2) 100%);
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 1.2rem;
+  animation: wiggle 1s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+
+.delete-btn:hover {
+  background: linear-gradient(135deg, rgba(255, 59, 48, 0.2) 0%, rgba(255, 59, 48, 0.3) 100%);
+  transform: scale(1.15) rotate(0deg);
+  animation: none;
+}
+
+.appointment-date,
+.appointment-time,
+.appointment-description {
+  margin: 10px 0;
+  color: #555;
+  font-size: 1rem;
+  position: relative;
+  z-index: 1;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.appointment-description {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 2px solid rgba(102, 126, 234, 0.2);
+  font-style: italic;
+  color: #666;
+}
+
+/* Información de horarios */
+.schedule-info {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 30px;
+  border-radius: 16px;
+  color: white;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.schedule-info::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.schedule-info h3 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.schedule-item {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: scaleIn 0.6s ease-out;
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.schedule-item:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.schedule-item strong {
+  font-size: 1.2rem;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.schedule-item span {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.welcome {
+  text-align: center;
+  color: white;
+  padding: 100px 20px;
+}
+
+.welcome h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.welcome p {
+  font-size: 1.3rem;
+  opacity: 0.9;
+}
+
+.calendar-container {
+  width: 100%;
+}
+
+/* Estilos del modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+  color: #667eea;
+  margin-bottom: 10px;
+}
+
+.modal-date {
+  color: #666;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.btn-cancel,
+.btn-submit {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-cancel {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.btn-cancel:hover {
+  background: #d0d0d0;
+}
+
+.btn-submit {
+  background: #667eea;
+  color: white;
+}
+
+.btn-submit:hover {
+  background: #5568d3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos de FullCalendar */
+.fc {
+  font-family: inherit;
+}
+
+.fc .fc-button-primary {
+  background: #667eea;
+  border-color: #667eea;
+}
+
+.fc .fc-button-primary:hover {
+  background: #5568d3;
+  border-color: #5568d3;
+}
+
+.fc .fc-button-primary:disabled {
+  background: #b0b9e0;
+  border-color: #b0b9e0;
+}
+
+.fc-event {
+  cursor: pointer;
+}
+
+.fc-daygrid-day:hover {
+  background: #f5f5f5;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .app-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
