@@ -6,9 +6,10 @@ package-lock.json
 dist
 build
 
-# Environment
+# Environment (NUNCA SUBIR ESTAS CLAVES)
 .env
 .env.local
+.env.production
 
 # IDE
 .vscode

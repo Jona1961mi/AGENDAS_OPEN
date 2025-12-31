@@ -20,14 +20,25 @@ npm install
 6. En URIs de redirección autorizados, añade: `http://localhost:3000`
 7. Copia el **Client ID** y **API Key**
 
-### 3. Actualizar credenciales
+### 3. Configurar variables de entorno
 
-Edita el archivo `src/config/googleConfig.js` y reemplaza:
+**⚠️ IMPORTANTE: Las claves están protegidas en variables de entorno**
 
-```javascript
-CLIENT_ID: 'TU_CLIENT_ID.apps.googleusercontent.com',
-API_KEY: 'TU_API_KEY'
+1. Copia el archivo de ejemplo:
+```bash
+cp .env.example .env
 ```
+
+2. Edita `.env` y agrega tus credenciales de Google:
+```env
+VITE_GOOGLE_CLIENT_ID=tu-client-id.apps.googleusercontent.com
+VITE_GOOGLE_API_KEY=tu-api-key
+```
+
+**🔒 Seguridad:**
+- El archivo `.env` está en `.gitignore` y **NUNCA se sube a Git**
+- Las credenciales se cargan automáticamente desde variables de entorno
+- Para producción, configura estas variables en tu plataforma de hosting
 
 ### 4. Ejecutar la aplicación
 
